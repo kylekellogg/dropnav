@@ -1,0 +1,114 @@
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		nav {
+			display: block;
+			width: 100%;
+		}
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			background-color: #c00;
+		}
+
+		li {
+			display: block;
+			float: left;
+			width: 25%;
+			height: 1em;
+			padding: 3em 0;
+			text-align: center;
+		}
+
+		a + ul {
+			height: 0;
+			width: 400%;
+			background-color: #ccc;
+			overflow: hidden;
+			margin-top: 2.8em;
+		}
+
+		.csstransitions a + ul {
+			-moz-transition: height 750ms;
+			-webkit-transition: height 750ms;
+			-o-transition: height 750ms;
+			transition: height 750ms;
+		}
+
+		#prim1 { background-color: #f00; }
+		#prim2 { background-color: #0f0; }
+		#prim3 { background-color: #0ff; }
+		#prim4 { background-color: #ff0; }
+
+		#sub1 { margin-left: 0;		background-color: #c00; }
+		#sub2 { margin-left: -100%;	background-color: #0c0; }
+		#sub3 { margin-left: -200%;	background-color: #0cc; }
+		#sub4 { margin-left: -300%;	background-color: #cc0; }
+
+		a {
+			height: 1em;
+		}
+
+		li:hover ul,
+		a:active + ul,
+		a:hover + ul,
+		a:focus + ul,
+		a + ul:hover {
+			height: 7em;
+		}
+	</style>
+</head>
+<body>
+
+	<nav>
+		<ul class="primary">
+			<li id="prim1">
+				<a href="javascript:void(0)">Link 1</a>
+				<ul id="sub1">
+					<li><a href="javascript:void(0)">Sublink 1.1</a></li>
+					<li><a href="javascript:void(0)">Sublink 1.2</a></li>
+					<li><a href="javascript:void(0)">Sublink 1.3</a></li>
+					<li><a href="javascript:void(0)">Sublink 1.4</a></li>
+				</ul>
+			</li>
+			<li id="prim2">
+				<a href="javascript:void(0)">Link 2</a>
+				<ul id="sub2">
+					<li><a href="javascript:void(0)">Sublink 2.1</a></li>
+					<li><a href="javascript:void(0)">Sublink 2.2</a></li>
+					<li><a href="javascript:void(0)">Sublink 2.3</a></li>
+					<li><a href="javascript:void(0)">Sublink 2.4</a></li>
+				</ul>
+			</li>
+			<li id="prim3">
+				<a href="javascript:void(0)">Link 3</a>
+				<ul id="sub3">
+					<li><a href="javascript:void(0)">Sublink 3.1</a></li>
+					<li><a href="javascript:void(0)">Sublink 3.2</a></li>
+					<li><a href="javascript:void(0)">Sublink 3.3</a></li>
+					<li><a href="javascript:void(0)">Sublink 3.4</a></li>
+				</ul>
+			</li>
+			<li id="prim4">
+				<a href="javascript:void(0)">Link 4</a>
+				<ul id="sub4">
+					<li><a href="javascript:void(0)">Sublink 4.1</a></li>
+					<li><a href="javascript:void(0)">Sublink 4.2</a></li>
+					<li><a href="javascript:void(0)">Sublink 4.3</a></li>
+					<li><a href="javascript:void(0)">Sublink 4.4</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<script type="text/javascript" src="js/modernizr.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
