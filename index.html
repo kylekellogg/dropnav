@@ -3,19 +3,21 @@
 	<title></title>
 
 	<style type="text/css">
+		/*	Normalize <nav> */
 		nav {
 			display: block;
 			width: 100%;
 		}
 
+		/*	Normalize <ul> */
 		ul {
 			display: block;
 			list-style: none;
 			margin: 0;
 			padding: 0;
-			background-color: #c00;
 		}
 
+		/*	Normalize <li>, provide height & padding */
 		li {
 			display: block;
 			float: left;
@@ -25,6 +27,7 @@
 			text-align: center;
 		}
 
+		/*	height 0 and overflow hidden hides subnavs, width 400% makes each the width of the parent (each parent is 1/4 the width total) */
 		a + ul {
 			height: 0;
 			width: 400%;
@@ -33,6 +36,7 @@
 			margin-top: 2.8em;
 		}
 
+		/*	Add juiciness for showmanship */
 		.csstransitions a + ul {
 			-moz-transition: height 750ms;
 			-webkit-transition: height 750ms;
@@ -40,20 +44,32 @@
 			transition: height 750ms;
 		}
 
+		/*	Background colors so you can see where each starts and ends */
 		#prim1 { background-color: #f00; }
 		#prim2 { background-color: #0f0; }
 		#prim3 { background-color: #0ff; }
 		#prim4 { background-color: #ff0; }
 
+		/*	Background colors so you can see where each starts and ends, left margin to align at origin */
 		#sub1 { margin-left: 0;		background-color: #c00; }
 		#sub2 { margin-left: -100%;	background-color: #0c0; }
 		#sub3 { margin-left: -200%;	background-color: #0cc; }
 		#sub4 { margin-left: -300%;	background-color: #cc0; }
 
+		/*	Just providing a height */
 		a {
 			height: 1em;
 		}
 
+		/*
+			The magic behind making the subnavs show
+			Broken down:
+				When hovering over any <li> give height to any children <ul>
+				When any <a> is active, give height to direct sibling <ul>
+				When hovering over any <a>, give height to direct sibling <ul>
+				When focused on any <a>, give height to direct sibling <ul>
+				When hovering over any <ul> with direct ancester <a>, give height to <ul>
+		*/
 		li:hover ul,
 		a:active + ul,
 		a:hover + ul,
